@@ -9,6 +9,9 @@ import { UserComparisonComponent } from './user-comparison/user-comparison.compo
 import { SelectCompanyComponent } from './select-company/select-company.component';
 import { LineGraphComponent } from './widgets/line-graph/line-graph.component';
 import { SalaryComponent } from './user-comparison/salary/salary.component';
+import { AppRoutingModule } from './/app-routing.module';
+import { SalaryTopCompanyComponent } from './user-comparison/salary/salary-top-company.component';
+import { YourCurrentStatusComponent } from './user-comparison/salary/your-current-status.component';
 // import { GaugeComponent } from './widgets/gauge/gauge.component';
 // import { PieChartComponent } from './widgets/pie-chart/pie-chart.component';
 
@@ -20,13 +23,16 @@ import { SalaryComponent } from './user-comparison/salary/salary.component';
     UserComparisonComponent,
     SelectCompanyComponent,
     LineGraphComponent,
-    SalaryComponent
+    SalaryComponent,
+    SalaryTopCompanyComponent,
+    YourCurrentStatusComponent
     // GaugeComponent,
     // PieChartComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
