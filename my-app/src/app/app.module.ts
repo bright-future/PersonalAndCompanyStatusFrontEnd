@@ -7,6 +7,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserComparisonComponent } from './user-comparison/user-comparison.component';
 import { SelectCompanyComponent } from './select-company/select-company.component';
+import { LineGraphComponent } from './widgets/line-graph/line-graph.component';
+import { SalaryComponent } from './user-comparison/salary/salary.component';
+// import { GaugeComponent } from './widgets/gauge/gauge.component';
+// import { PieChartComponent } from './widgets/pie-chart/pie-chart.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +18,11 @@ import { SelectCompanyComponent } from './select-company/select-company.componen
     DashboardComponent,
     UserDetailsComponent,
     UserComparisonComponent,
-    SelectCompanyComponent
+    SelectCompanyComponent,
+    LineGraphComponent,
+    SalaryComponent
+    // GaugeComponent,
+    // PieChartComponent
   ],
   imports: [
     BrowserModule,

@@ -1,12 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-salary', 
+  templateUrl: './salary.component.html',
+  styleUrls: ['./salary.component.css']
 })
-export class AppComponent {
-  title = 'app';
+export class SalaryComponent implements OnInit {
   private chartOption1;
   private chartData1;
   private chartName1;
@@ -48,4 +47,5 @@ export class AppComponent {
                 series:[[10,20,50,10,10,45],[10,30,40,44,32,45],[10,30,40,44,32,45]]
     }
   }
+
 }
