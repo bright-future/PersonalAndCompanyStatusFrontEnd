@@ -15,11 +15,13 @@ const httpOptions = {
 export class UserDetailService {
   private url = '';
 
-  constructor( private http: HttpClient,
-               private UserDetailService: UserDetailService) { }
+  constructor( private http: HttpClient) { }
 
   sendUserDetails(userDetail: UserDetails): Observable<any> {
-    return this.http.post(this.url, userDetail, httpOptions);
+    return this.http.post(this.url, userDetail, httpOptions);//.catch(this.handleError);
   }
 
+  handleError(): void{
+    console.log("Error sending user details");
+  }
 }
