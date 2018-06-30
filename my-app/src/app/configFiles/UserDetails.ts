@@ -10,11 +10,11 @@ export class UserDetails{
   constructor(){
     this.email="";
     this.college="";
-    this.year="";
+    this.year=0;
     this.company="";
-    this.ctc="";
+    this.ctc=0;
     this.designation="";
     this.primaryskills="";
-    this.batch="";
+    this.branch="";
   }
 }
