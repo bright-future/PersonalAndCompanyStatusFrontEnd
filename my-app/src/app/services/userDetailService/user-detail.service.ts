@@ -8,11 +8,19 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class UserDetailService {
   private url = '';
-  constructor( private http: HttpClient,
-               private messageService: MessageService) { }
 
-  getUserDetails(): Observables<UserDetails> {
-    return this.http.post<UserDetails>(this.url);
+  const httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
+
+  constructor( private http: HttpClient,
+               private UserDetailService: UserDetailService) { }
+
+  updateUserDetails(userDetail: UserDetails): Observables<UserDetails> {
+    return this.http.post(this.url, userDetail, httpOptions).pipe(
+      tap((userDetail: UserDetails) => this.log(`added user w/ id=${userDetail.email}`)),
+      catchError(this.handleError<UserDetails>('updateUserDetails'))
+    );
   }
 
 }
