@@ -1,48 +1,48 @@
-<form >
+<form  (ngSubmit)="onSubmit()" #userDetailForm="ngForm">
   <div class="container metallic">
     <h3 class="center">Add Details for your report card</h3>
     <div class="row">
       <div class="col-md-6">
-        <input name="firstname" placeholder="Enter Your First Name:" class="button4">
+        <input name="email" [(ngModel)]="userDetail.email" required placeholder="Enter Your Email:" class="button4">
       </div>
       <br>
       <div class="col-md-6">
-        <input name="lastname" placeholder="Enter Your Last Name:" class="button4">
+        <input name="college" [(ngModel)]="userDetail.college" required placeholder="Enter Your College:" class="button4">
       </div>
     </div>
     <br>
     <div class="row">
       <div class="col-md-6">
-        <input name="college" placeholder="Enter Your College:" class="button4">
+        <input name="branch" [(ngModel)]="userDetail.branch" required placeholder="Enter Your Field in College:" class="button4">
       </div>
       <br>
       <div class="col-md-6">
-        <input name="year" placeholder="Enter Your Year of Passing:" class="button4">
+        <input name="year" [(ngModel)]="userDetail.year" required placeholder="Enter Your Year of Passing:" class="button4">
       </div>
    </div>
     <br>
     <div class="row">
       <div class="col-md-6">
-        <input name="company" placeholder="Enter Your Company You Work in:" class="button4">
+        <input name="company" [(ngModel)]="userDetail.company" required placeholder="Enter Your Company You Work in:" class="button4">
       </div>
       <br>
       <div class="col-md-6">
-        <input name="currentctc" placeholder="Enter Your CTC:" class="button4">
+        <input name="currentctc" [(ngModel)]="userDetail.ctc" required placeholder="Enter Your CTC:" class="button4">
       </div>
     </div>
     <br>
     <div class="row">
       <div class="col-md-6">
-        <input name="designation" placeholder="Enter Your Designation:" class="button4">
+        <input name="designation" [(ngModel)]="userDetail.designation" required placeholder="Enter Your Designation:" class="button4">
       </div>
       <br>
       <div class="col-md-6">
-        <input name="skill" placeholder="Enter Your Primary Skill Just one:" class="button4">
+        <input name="skill" [(ngModel)]="userDetail.skill" required placeholder="Enter Your Primary Skill Just one:" class="button4">
       </div>
       <br>
     </div>
     <br>
-    <button class="button5">Submit</button>
+    <button [disabled]="!userDetailForm.form.valid" class="button5">Submit</button>
     <br>
     <br>
 </div>

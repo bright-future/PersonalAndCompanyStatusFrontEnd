@@ -15,7 +15,6 @@ import { YourCurrentStatusComponent } from './user-comparison/salary/your-curren
 import { GaugeComponent } from './widgets/gauge/gauge.component';
 import { CompaniesComponent } from './user-comparison/skillsAndTechnology/companies.component';
 import { PieChartComponent } from './widgets/pie-chart/pie-chart.component';
-import { HttpClientModule }    from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -35,8 +34,7 @@ import { HttpClientModule }    from '@angular/common/http';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule,
-    HttpClientModule    
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

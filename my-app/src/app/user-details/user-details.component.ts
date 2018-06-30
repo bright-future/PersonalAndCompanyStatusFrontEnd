@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserDetailService } from '../services/userDetailService/user-detail.service';
+import { UserDetails } from '../configFiles/UserDetails';
 
 @Component({
   selector: 'app-user-details',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-details.component.css']
 })
 export class UserDetailsComponent implements OnInit {
-
-  constructor() { }
+  userDetail:UserDetails;
+  constructor(private userDetailService: UserDetailService) { }
 
   ngOnInit() {
+    this.userDetail = new UserDetails();
+    this.getUserDetails();
   }
 
+  getUserDetails(): void{
+    this.userDetails = this.userDetailService.getDetails()
+      .subscribe(userDetails => this.userDetails = userDetails);
+  }
 }
