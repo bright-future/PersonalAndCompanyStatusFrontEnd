@@ -42,7 +42,13 @@ export class UserComparisonComponent implements OnInit {
       );
       console.log("init called");
   }
+  // getData(result:any){
+  //
+  // }
   extractData(res:any){
     console.log("extractData="+res);
+  }
+  errorMessage(err:any){
+
   }
 }

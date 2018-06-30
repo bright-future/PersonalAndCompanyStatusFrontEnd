@@ -31,9 +31,10 @@ export class UserComparisonService {
 
     console.log("sending request",body,this.url,httpOptions);
     return this.http.post(this.url, body)
-    map((res: Response) => res.setHeader('Access-Control-Allow-Origin','http://192.168.173.56:8092  '))
-    .catch((error:any)=> Observable.throw(error.json().error||"server error"))
-    .subscribe();
+    .map((res: Response) => res )
+    // .map((res: Response) => res.setHeader('Access-Control-Allow-Origin','http://192.168.173.56:8092  '))
+    .catch((error:any)=> Observable.throw(error.json().error||"server error"));
+    // .subscribe();
     // .map((response: Response) => {
     //     console.log("response",response);
     //     return response;
