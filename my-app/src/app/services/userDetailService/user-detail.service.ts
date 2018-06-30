@@ -11,7 +11,7 @@ export class UserDetailService {
   constructor( private http: HttpClient,
                private messageService: MessageService) { }
 
-  getUserDetails(): Observables<UserDetails[]> {
+  getUserDetails(): Observables<UserDetails> {
     return this.http.post<UserDetails>(this.url);
   }
 

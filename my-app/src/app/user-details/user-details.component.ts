@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { UserDetailService } from '../services/userDetailService/user-detail.service';
 import { UserDetails } from '../configFiles/UserDetails';
 
@@ -9,15 +10,19 @@ import { UserDetails } from '../configFiles/UserDetails';
 })
 export class UserDetailsComponent implements OnInit {
   userDetail:UserDetails;
-  constructor(private userDetailService: UserDetailService) { }
+  constructor(private router: Routes,private userDetailService: UserDetailService) { }
 
   ngOnInit() {
     this.userDetail = new UserDetails();
-    this.getUserDetails();
+
   }
 
   getUserDetails(): void{
     this.userDetails = this.userDetailService.getDetails()
       .subscribe(userDetails => this.userDetails = userDetails);
+  }
+  onSubmit(){
+    this.getUserDetails();
+     this.router.navigateByUrl(['./userReport']);
   }
 }
