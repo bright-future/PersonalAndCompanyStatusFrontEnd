@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'app'
+  providedIn: 'root'
 })
 export class UserComparisonService {
 
