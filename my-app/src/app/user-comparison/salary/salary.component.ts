@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-salary', 
+  selector: 'app-salary',
   templateUrl: './salary.component.html',
   styleUrls: ['./salary.component.css']
 })
@@ -9,7 +9,7 @@ export class SalaryComponent implements OnInit {
   private chartOption1;
   private chartData1;
   private chartName1;
-  constructor(){
+  constructor(private userComparisonService:UserComparisonService){
     this.chartName1='Bar Charts',
             this.chartOption1={
                 type:'bar',
@@ -46,6 +46,9 @@ export class SalaryComponent implements OnInit {
                 // series:[[10,20,50,10,10,45],[10,30,40,44,32,45],[10,20,50,11,22,33],[11,56,45,67,89,23],[10,20,50,11,22,33],[11,56,45,67,89,23]]
                 series:[[10,20,50,10,10,45],[10,30,40,44,32,45],[10,30,40,44,32,45]]
     }
-  }
 
+  }
+  getLabels(){
+    this.chartData1.labels:[];
+  }
 }

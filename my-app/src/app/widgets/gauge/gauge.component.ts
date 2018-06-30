@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,AfterViewInit,OnDestroy,Input } from '@angular/core';
+import * as d3 from "d3";
 
 @Component({
   selector: 'app-gauge',
@@ -261,7 +262,7 @@ export class GaugeComponent implements OnInit {
 
                       return 'rotate('+temp+') translate(0,'+(-self.radius-10)+')';
                   })
-                  .attr("fill",'white')
+                  .attr("fill",'black')
                   .attr('text-anchor','middle')
                   .attr('opacity',function(){
                       if(self.options.labeling)
@@ -293,7 +294,7 @@ export class GaugeComponent implements OnInit {
                           var format=d3.format('.1f');
                           return Math.floor(format(self.Rad2myDataScale(Math.PI/2) ) );
                       })
-                      .attr("fill",'white')
+                      .attr("fill",'black')
                       .attr("font-size",self.textsize+'px');
       }
       else{
@@ -321,7 +322,7 @@ export class GaugeComponent implements OnInit {
           var format=d3.format('.1f');
           return format(self.data);
       })
-              .attr('fill','white')
+              .attr('fill','black')
               .attr('text-anchor','middle');
 
   }
@@ -345,7 +346,7 @@ export class GaugeComponent implements OnInit {
                       .append('text')
                       .attr('y',-self.radius-30)
                       .text(self.data)
-                      .attr('fill','white')
+                      .attr('fill','black')
                       .attr('transform','rotate(-90)');
 
           pointerClass.append('path')

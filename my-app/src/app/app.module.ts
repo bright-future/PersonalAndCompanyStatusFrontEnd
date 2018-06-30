@@ -12,8 +12,9 @@ import { SalaryComponent } from './user-comparison/salary/salary.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { SalaryTopCompanyComponent } from './user-comparison/salary/salary-top-company.component';
 import { YourCurrentStatusComponent } from './user-comparison/salary/your-current-status.component';
-// import { GaugeComponent } from './widgets/gauge/gauge.component';
-// import { PieChartComponent } from './widgets/pie-chart/pie-chart.component';
+import { GaugeComponent } from './widgets/gauge/gauge.component';
+import { CompaniesComponent } from './user-comparison/skillsAndTechnology/companies.component';
+import { PieChartComponent } from './widgets/pie-chart/pie-chart.component';
 
 @NgModule({
   declarations: [
@@ -25,9 +26,10 @@ import { YourCurrentStatusComponent } from './user-comparison/salary/your-curren
     LineGraphComponent,
     SalaryComponent,
     SalaryTopCompanyComponent,
-    YourCurrentStatusComponent
-    // GaugeComponent,
-    // PieChartComponent
+    YourCurrentStatusComponent,
+    GaugeComponent,
+    CompaniesComponent,
+    PieChartComponent
   ],
   imports: [
     BrowserModule,
