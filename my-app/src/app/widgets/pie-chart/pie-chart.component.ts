@@ -80,7 +80,7 @@ export class PieChartComponent implements OnInit {
         if(this.allow){
             if(this.options.showTable)
             {
-                this.makeTable();
+                
                 d3.select('#'+this.random).select('#table').style('z-index',8);
                 this.removeSvgChildren();
                 this.drawGraph=true;
