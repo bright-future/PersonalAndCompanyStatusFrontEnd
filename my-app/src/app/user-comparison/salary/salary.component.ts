@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {UserComparisonService} from '../../services/user-comparison.service';
 
 @Component({
   selector: 'app-salary',
@@ -27,7 +28,6 @@ export class SalaryComponent implements OnInit {
                 showTable:false,// to switch to table mode
                 // limit:25,
                 labelXInterpolation:function(i){// either remove this property or define it if i=null then the following index of x value wont be shown
-
                                 if(i%1==0)
                                 {
                                     return 'abc';
@@ -48,7 +48,10 @@ export class SalaryComponent implements OnInit {
     }
 
   }
-  getLabels(){
-    this.chartData1.labels:[];
+  onSubmit(){
+    
   }
+  // getLabels(){
+  //   // this.chartData1.labels:[];
+  // }
 }
