@@ -9,17 +9,18 @@ import { UserDetails } from '../configFiles/UserDetails';
   styleUrls: ['./user-details.component.css']
 })
 export class UserDetailsComponent implements OnInit {
+
   userDetail:UserDetails;
   constructor(private router: Routes,private userDetailService: UserDetailService) { }
 
   ngOnInit() {
     this.userDetail = new UserDetails();
-
+    this.getUserDetails(this.userDetail);
   }
 
-  getUserDetails(): void{
-    this.userDetails = this.userDetailService.getDetails()
-      .subscribe(userDetails => this.userDetails = userDetails);
+  getUserDetails(userDetail: UserDetails): void{
+    this.userDetailService.sendUserDetails(userDetail)
+      .subscribe((userDetail: UserDetails) => this.userDetail = userDetail);
   }
   onSubmit(){
     this.getUserDetails();

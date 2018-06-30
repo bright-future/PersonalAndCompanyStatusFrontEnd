@@ -15,6 +15,6 @@ export class UserDetails{
     this.ctc=0;
     this.designation="";
     this.primaryskills="";
-    this.batch="";
+    this.branch="";
   }
 }
